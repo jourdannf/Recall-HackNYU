@@ -10,10 +10,14 @@ import axios from "axios"
 
 import { Link } from "react-router-dom"
 
-export default function SignUpCaretakerPage() {
+export default function SignUpElderlyPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
+    const [medicalCondition, setMedicalCondition] = useState("");
+    const [age, setAge] = useState("");
+    const [gender, setGender] = useState("");
+    const [relation, setRelation] = useSate("");
     const [submit, setSubmit] = useState(false);
 
     useEffect(() => {
@@ -40,6 +44,11 @@ export default function SignUpCaretakerPage() {
             <InputText placeholderText="Name" placeholderIcon={Profile} handleText = {setName} value={name} />
             <InputText placeholderText="Username" placeholderIcon={Profile} handleText = {setUsername} value={username} />
             <InputText placeholderText="Password" placeholderIcon={Lock} handleText = {setPassword} value={password} />
+            //Convert into Interger
+            <InputText placeholderText="Age" placeholderIcon={Profile} handleText = {setAge} value={age} />
+                      
+            <InputText placeholderText="Medical Condition" placeholderIcon={Profile} handleText = {setMedicalCondition} value={medicalCondiditon} />
+            <InputText placeholderText="Relationship" placeholderIcon={Profile} handleText = {setRelation} value={relation} />
             <Link to="/" ><LogInButton option="Sign up" onClick={checkSubmission} /></Link>
         </>
     )

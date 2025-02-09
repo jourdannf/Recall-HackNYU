@@ -25,6 +25,7 @@ function App() {
        <Routes>
         <Route path="/" element={<StartPage />}></Route>
         <Route path="/signup" element={<SignUpCaretakerPage />}></Route>
+        <Route path="/caretaker/patient/signup" element={<SignUpElderly />}></Route>
         {/* <Route path="/caretaker/:id" element={<SearchBar />}></Route>
         <Route path="/caretaker/:add" element={<SearchBar />}></Route>
         <Route path="/patient/:id/puzzle" element={<SerachBar />}></Route> */}
