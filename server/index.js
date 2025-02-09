@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth');
 const appointmentRoutes = require('./routes/appointments');
 const elderlyRoutes = require('./routes/elderly');
-const cors = require('cors');
+const gameRoutes = require('./routes/game');
 
 dotenv.config(); // Load environment variables from .env
 
@@ -13,24 +13,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-var whitelist = ['http://localhost:5173', 'http://127.0.0.1:5173']
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
-
-app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);               // Auth Routes (Signup, Login)
 app.use('/api/appointments', appointmentRoutes); // Appointment Routes
 app.use('/api/elderly', elderlyRoutes); // Elderly Routes (Add Elderly)
+app.use('/api/game', gameRoutes); // Game Routes (Word Search)
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })

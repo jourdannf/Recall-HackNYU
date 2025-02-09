@@ -17,7 +17,7 @@ export default function SignUpElderlyPage() {
     const [medicalCondition, setMedicalCondition] = useState("");
     const [age, setAge] = useState("");
     const [gender, setGender] = useState("");
-    const [relation, setRelation] = useSate("");
+    const [relation, setRelation] = useState("");
     const [submit, setSubmit] = useState(false);
 
     useEffect(() => {
@@ -46,8 +46,16 @@ export default function SignUpElderlyPage() {
             <InputText placeholderText="Password" placeholderIcon={Lock} handleText = {setPassword} value={password} />
             //Convert into Interger
             <InputText placeholderText="Age" placeholderIcon={Profile} handleText = {setAge} value={age} />
-                      
-            <InputText placeholderText="Medical Condition" placeholderIcon={Profile} handleText = {setMedicalCondition} value={medicalCondiditon} />
+            <div className="gender-select">
+                <label>Gender:</label>
+                <select value={gender} onChange={(e) => setGender(e.target.value)}>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="doesn't apply">Doesn't Apply</option>
+                </select>
+            </div>                    
+            <InputText placeholderText="Medical Condition" placeholderIcon={Profile} handleText = {setMedicalCondition} value={medicalCondition} />
             <InputText placeholderText="Relationship" placeholderIcon={Profile} handleText = {setRelation} value={relation} />
             <Link to="/" ><LogInButton option="Sign up" onClick={checkSubmission} /></Link>
         </>
