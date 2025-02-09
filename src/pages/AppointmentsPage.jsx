@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar"
+import { Link } from "react-router-dom";
 
 export default function AppointmentPage ({user}) {
     //If user is caretaker, show Nav Bar with add option
@@ -11,7 +12,7 @@ export default function AppointmentPage ({user}) {
 
     return (
         <div style={{width: "1853px", margin: "auto"}}>
-            {(role == "caretaker" && !elderlyPerson) && 
+            {(role == "caretaker" && !user?.elderlyPerson) && 
                 <Link to="/caretaker/patient/signup" ><div>Add Elderly Person</div></Link>
             }
 

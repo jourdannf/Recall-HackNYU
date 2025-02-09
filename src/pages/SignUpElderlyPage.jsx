@@ -19,15 +19,22 @@ export default function SignUpElderlyPage() {
     const [gender, setGender] = useState("");
     const [relation, setRelation] = useState("");
     const [submit, setSubmit] = useState(false);
+    const token = localStorage.getItem("token");
 
     useEffect(() => {
         (async() => {
             // const param = new URLSearchParams{}});
-            const result = await axios.post("http://localhost:3000/api/auth/signup", {
-                "username": username , "password": password, "name": name
-            })
+            const result = await axios.post("http://localhost:3000/api/elderly/add", {
+                "username": username , "password": password, "name": name, "gender": gender, "medicalCondition": medicalCondition, "relationToCaregiver": relation, "age": Number(age)
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`  // 🔑 Send the Bearer token
+                }
+            }
+        
+        )
 
-            console.log(result);
+            
 
             
         })();
@@ -44,7 +51,6 @@ export default function SignUpElderlyPage() {
             <InputText placeholderText="Name" placeholderIcon={Profile} handleText = {setName} value={name} />
             <InputText placeholderText="Username" placeholderIcon={Profile} handleText = {setUsername} value={username} />
             <InputText placeholderText="Password" placeholderIcon={Lock} handleText = {setPassword} value={password} />
-            //Convert into Interger
             <InputText placeholderText="Age" placeholderIcon={Profile} handleText = {setAge} value={age} />
             <div className="gender-select">
                 <label>Gender:</label>

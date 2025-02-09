@@ -6,6 +6,8 @@ import InputText from './components/InputText'
 import LogInButton from './components/LogInButton'
 import StartPage from './pages/StartPage'
 import SignUpCaretakerPage from './pages/SignUpCaretaker'
+import SignUpElderlyPage from './pages/SignUpElderlyPage'
+import PuzzlePage from './pages/PuzzlePage'
 
 import { useEffect } from 'react'
 
@@ -25,10 +27,8 @@ function App() {
        <Routes>
         <Route path="/" element={<StartPage />}></Route>
         <Route path="/signup" element={<SignUpCaretakerPage />}></Route>
-        <Route path="/caretaker/patient/signup" element={<SignUpElderly />}></Route>
-        {/* <Route path="/caretaker/:id" element={<SearchBar />}></Route>
-        <Route path="/caretaker/:add" element={<SearchBar />}></Route>
-        <Route path="/patient/:id/puzzle" element={<SerachBar />}></Route> */}
+        <Route path="/caretaker/patient/signup" element={<SignUpElderlyPage />}></Route>
+        <Route path="/patient/puzzle" element={<PuzzlePage />}></Route>
       </Routes>
     </div>
   )

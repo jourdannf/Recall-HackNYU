@@ -4,7 +4,7 @@ import "../App.css"
 
 import Lock from '../assets/images/Lock.svg'
 import Profile from '../assets/images/Profile.svg'
-import { use, useState } from "react"
+import { useState } from "react"
 import { useEffect } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
@@ -23,6 +23,7 @@ export default function LoginPage ({user, changeUser}) {
 
             if (result.data) {
                 changeUser(result.data.user);
+                localStorage.setItem(result.data.token);
             } 
 
             
