@@ -7,23 +7,21 @@ import Profile from '../assets/images/Profile.svg'
 import { use, useState } from "react"
 import { useEffect } from "react"
 import axios from "axios"
+
 import { Link } from "react-router-dom"
 
-export default function LoginPage ({user, changeUser}) {
+export default function SignUpCaretakerPage() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
     const [submit, setSubmit] = useState(false);
 
     useEffect(() => {
         (async() => {
             // const param = new URLSearchParams{}});
-            const result = await axios.post("http://localhost:3000/api/auth/login", {
-                "username": username , "password": password
-            })
-
-            if (result.data) {
-                changeUser(result.data.user);
-            } 
+            const result = await axios.post("http://localhost:3000/api/auth/signup", {
+                "username": username , "password": password, "name": name
+            }) 
 
             
         })();
@@ -35,16 +33,12 @@ export default function LoginPage ({user, changeUser}) {
         setSubmit(true);
     }
 
-    if (user) {
-
-    }
-
     return (
         <>           
+            <InputText placeholderText="Name" placeholderIcon={Profile} handleText = {setName} value={name} />
             <InputText placeholderText="Username" placeholderIcon={Profile} handleText = {setUsername} value={username} />
             <InputText placeholderText="Password" placeholderIcon={Lock} handleText = {setPassword} value={password} />
-            <Link to="/signup"><LogInButton option="Sign up" /> </Link>
-            <LogInButton option="Log in" onClick={checkSubmission} />
+            <Link to="\" ><LogInButton option="Sign up" onClick={checkSubmission} /></Link>
         </>
     )
 }

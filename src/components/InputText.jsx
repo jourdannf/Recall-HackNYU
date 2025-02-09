@@ -9,7 +9,7 @@ export default function InputText(props){
     
     return(
 
-        <input type="text" placeholder={props.placeholderText} className = "textbox fredoka" value={props.value} onChange={handleInputChange} />
+        <input required type="text" placeholder={props.placeholderText} className = "textbox fredoka" value={props.value} onChange={handleInputChange} />
             // <img src= {props.placeholderIcon} />
     )
 }

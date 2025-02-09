@@ -5,6 +5,7 @@ import SearchBar from './components/searchbar'
 import InputText from './components/InputText'
 import LogInButton from './components/LogInButton'
 import StartPage from './pages/StartPage'
+import SignUpCaretakerPage from './pages/SignUpCaretaker'
 
 import { useEffect } from 'react'
 
@@ -22,8 +23,8 @@ function App() {
   return (
     <div>
        <Routes>
-        <Route path="/" element={<StartPage role = "" />}></Route>
-        <Route path="/patient/:id" element={<SearchBar />}></Route>
+        <Route path="/" element={<StartPage />}></Route>
+        <Route path="/signup" element={<SignUpCaretakerPage />}></Route>
         {/* <Route path="/caretaker/:id" element={<SearchBar />}></Route>
         <Route path="/caretaker/:add" element={<SearchBar />}></Route>
         <Route path="/patient/:id/puzzle" element={<SerachBar />}></Route> */}

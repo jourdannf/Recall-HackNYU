@@ -12,7 +12,7 @@ export default function StartPage ({role}) {
     if (user == "") {
         return <LoginPage user={user} changeUser={setUser} />
     }else {
-        return <AppointmentPage role={user}/>
+        return <AppointmentPage user={user}/>
     }
 
     
