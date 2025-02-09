@@ -110,3 +110,25 @@
 .grid-cell:hover {
   background-color: #d3e3fc;
 }
+
+.action-button {
+  background-color: #4497CF;
+  color: white;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 65px;
+  display: flex;
+  border-radius: 15px;
+  
+}
+
+.action-button:hover {
+  background-color: #395F76;
+}
+
+.action-button > p {
+  align-items: center;
+  text-align: center;
+  
+}

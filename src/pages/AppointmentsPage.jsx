@@ -1,3 +1,5 @@
+import "../App.css";
+
 import NavBar from "../components/NavBar"
 import { Link } from "react-router-dom";
 
@@ -11,9 +13,18 @@ export default function AppointmentPage ({user}) {
     }
 
     return (
-        <div style={{width: "1853px", margin: "auto"}}>
+        <div style={{width: "360px", margin: "auto", height: "100vh", border: "2px solid black", borderRadius: "25px", }}>
+            
             {(role == "caretaker" && !user?.elderlyPerson) && 
-                <Link to="/caretaker/patient/signup" ><div>Add Elderly Person</div></Link>
+                <>               <h2>Hello, {user.name}!</h2>
+                <p> Welcome your wonderful elderly person to the app by adding them as a user below! </p>
+                <Link to="/caretaker/patient/signup" >
+                    <div className="action-button" style={{position: "relative", top: "150px"}}>
+                        
+                        <h3>Add Elderly Person</h3>
+                    </div>
+                </Link>
+                </>
             }
 
             
