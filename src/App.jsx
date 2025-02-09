@@ -6,30 +6,23 @@ import InputText from './components/InputText'
 import LogInButton from './components/LogInButton'
 import StartPage from './pages/StartPage'
 
+import { useEffect } from 'react'
+
 import {Routes, Route} from 'react-router-dom';
 import './App.css'
-import Lock from '../src/assets/images/Lock.svg'
-import Profile from '../src/assets/images/Profile.svg'
 
 
 function App() {
   
-  
-
-
-  return (
-    <>
-     <InputText placeholderText="Username" placeholderIcon={Profile} />
-     <InputText placeholderText="Password" placeholderIcon={Lock} />
-     <LogInButton option="Sign in" />
-     <LogInButton option="Log in" />
-    </>
+  useEffect(() => {
+    fetch("")
+  })
 
 
   return (
     <div>
        <Routes>
-        <Route path="/" element={<StartPage userID = "1234" />}></Route>
+        <Route path="/" element={<StartPage role = "1234" />}></Route>
         <Route path="/patient/:id" element={<SearchBar />}></Route>
         {/* <Route path="/caretaker/:id" element={<SearchBar />}></Route>
         <Route path="/caretaker/:add" element={<SearchBar />}></Route>

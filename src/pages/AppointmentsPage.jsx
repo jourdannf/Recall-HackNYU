@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar"
 
-export default function AppointmentPage ({userID}) {
+export default function AppointmentPage ({role}) {
     //If user is caretaker, show Nav Bar with add option
     //If user is patient, show Nav Bar with Puzzle Option
 
