@@ -23,7 +23,7 @@ export default function LoginPage ({user, changeUser}) {
 
             if (result.data) {
                 changeUser(result.data.user);
-                localStorage.setItem(result.data.token);
+                localStorage.setItem("token", result.data.token);
             } 
 
             
@@ -32,7 +32,6 @@ export default function LoginPage ({user, changeUser}) {
 
     function checkSubmission (e) {
         //Check if submission meets requirments -- don't have time to code right now
-        console.log("I made it!");
         setSubmit(true);
     }
 
@@ -41,11 +40,17 @@ export default function LoginPage ({user, changeUser}) {
     }
 
     return (
-        <>           
+        <div style={{width: "360px", height: "100vh", border: "2px solid black", borderRadius: "25px", }}>
+            <h3> Log In </h3>
+            <div style={{position: "relative", top: "100px"}}>           
             <InputText placeholderText="Username" placeholderIcon={Profile} handleText = {setUsername} value={username} />
             <InputText placeholderText="Password" placeholderIcon={Lock} handleText = {setPassword} value={password} />
-            <Link to="/signup"><LogInButton option="Sign up" /> </Link>
+
+            
             <LogInButton option="Log in" onClick={checkSubmission} />
-        </>
+            <Link to="/signup"><p> Sign Up </p> </Link>
+            </div>
+            
+        </div>
     )
 }
