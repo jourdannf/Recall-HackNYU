@@ -1,14 +1,18 @@
 import LoginPage from "./LogInPage"
 import AppointmentPage from "./AppointmentsPage"
+import { useState } from "react";
 
 export default function StartPage ({role}) {
     // If a user is logged in show them the home page
     // Otherwise show user the log in page
+    console.log(role);
 
-    if (role == "") {
-        return <LoginPage />
+    const [user, setUser] = useState("")
+
+    if (user == "") {
+        return <LoginPage user={user} changeUser={setUser} />
     }else {
-        return <AppointmentPage role={role}/>
+        return <AppointmentPage role={user}/>
     }
 
     

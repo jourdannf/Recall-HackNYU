@@ -2,9 +2,14 @@ import "../App.css"
 import LockImg from "../assets/images/Lock.svg"
 
 export default function InputText(props){
+   
+    function handleInputChange (e) {
+        props.handleText(e.target.value);
+    }
+    
     return(
-        <div className = "textbox fredoka">
-            <img src= {props.placeholderIcon} /> {props.placeholderText}
-        </div>
+
+        <input type="text" placeholder={props.placeholderText} className = "textbox fredoka" value={props.value} onChange={handleInputChange} />
+            // <img src= {props.placeholderIcon} />
     )
 }

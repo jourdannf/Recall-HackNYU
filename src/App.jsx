@@ -22,7 +22,7 @@ function App() {
   return (
     <div>
        <Routes>
-        <Route path="/" element={<StartPage role = "1234" />}></Route>
+        <Route path="/" element={<StartPage role = "" />}></Route>
         <Route path="/patient/:id" element={<SearchBar />}></Route>
         {/* <Route path="/caretaker/:id" element={<SearchBar />}></Route>
         <Route path="/caretaker/:add" element={<SearchBar />}></Route>
